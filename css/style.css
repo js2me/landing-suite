@@ -48,7 +48,7 @@ body{
 	transform: scale(1,1);
 }
 .scroll-part:not(:first-child) h2.title{
-	transition: transform .3s ease-out,opacity .4s ease-out;
+	/*transition: transform .3s ease-out,opacity .4s ease-out;*/
 	transform: scale(0.8,0.8);
 	opacity: 0;
 }
@@ -73,10 +73,11 @@ body{
 button.show-menu {
 	display: none;
 	margin-top: .8vh;
-	height: 50px;
-	width: 50px;
+	height: auto;
+	width: 8vmax !important;
 	/* max-width: 8.5%; */
-	max-height: 90%;
+	margin-top: 1.5vmax;
+	/* max-height: 90%; */
 	float: right;
 	border-radius: .5em;
 	border: none;
@@ -97,14 +98,14 @@ button.show-menu > svg{
 	left: 0;
 	z-index: 1;
 	/* width: 1140px; */
-	margin: 2% auto;
+	margin: 0 auto;
 	/*margin-left: auto;*/
 	/*margin-right: auto;*/
 	padding: 0;
 	/* padding: 7% .5em; */
 	/*padding-left: .5em;*/
 	/*padding-right: .5em;*/
-	transition: height .6s ease-out;
+	/*transition: height .6s ease-out;*/
 }
 .menu,.logo{
 	padding: 0;
@@ -118,7 +119,7 @@ button.show-menu > svg{
 .logo{
 	background:url(../images/white-logo.png) no-repeat center center;
 }
-.header.full-show .logo{
+.header.full-show .logo,.header.opened .logo{
 	background:url(../images/black-logo.png) no-repeat center center;
 
 }
@@ -145,7 +146,7 @@ button.show-menu > svg{
 	/* white-space: nowrap; */
 	display: flex;
 	align-items: center;
-	transition: all .4s ease;
+	/*transition: all .4s ease;*/
 	justify-content: flex-end;
 }
 
@@ -164,12 +165,12 @@ button.show-menu > svg{
 	text-decoration: none;
 	color: white;
 	border-bottom:1px solid rgba(0, 0, 0, 0);
-	transition:all .4s ease;
+	/*transition:all .4s ease;*/
 }
 .header:not(.full-show) .menu-item.active,.menu-item.register {
 	background: #d32f2f;
 }
-.header.full-show .menu-item:not(.register) a{
+.header.full-show .menu-item:not(.register) a,.header.opened .menu-item:not(.register) a{
 	color: rgb(77, 77, 77);
 	font-family: RobotoRegular;
 }
@@ -186,10 +187,10 @@ button.show-menu > svg{
 	animation-duration: 1s;
 	box-shadow: -10px 1px 1em rgba(0, 0, 0, 0.31);
 }
-.header.full-show .menu,.header.full-show .logo{
+.header.full-show .menu,.header:not(.opened).full-show .logo{
 	height: 100%;
 }
-.header.full-show .menu{
+.header:not(.opened).full-show .menu{
 	padding: 0 2em;
 }
 
@@ -229,7 +230,7 @@ section.company-info {
 	font-size: 1.5669em;
 	padding: 0 4% 9%;
 }
-.full-show path#svg_1 {
+.full-show path#svg_1,.opened path#svg_1 {
 	fill: #d32f2f;
 }
 
@@ -368,6 +369,8 @@ button.learn-more:active {
 		margin-left: 4.1%;
 		margin-right: 4%;
 		margin-top: 4%;
+		margin-bottom: 4%;
+		max-width: 25%;
 		border: 1px solid rgba(0, 0, 0, 0.15);
 	}
 	button.down-arrow-button {
@@ -403,9 +406,9 @@ button.learn-more:active {
 	}
 
 	.full-height-page{
-		min-height: 100%;
-		height: auto !important;
-		padding-bottom: 5%;
+		/* min-height: 100%; */
+		/* height: auto !important; */
+		/* padding-bottom: 5%; */
 	}
 	.what-gets .row > div {
 		padding: 0 5%;
@@ -424,9 +427,9 @@ button.learn-more:active {
 		color: #d32f2f;
 	}
 	.row.content.speaker-info {
-		transform: translateY(20em);
+		transform: translateY(35em);
 		opacity: 0;
-		transition: all .3s ease-out;
+		transition: all .8s ease-out;
 	}
 
 	.viewed .row.content.speaker-info {
@@ -441,13 +444,11 @@ button.learn-more:active {
 		transform: translateY(-0.1em);
 	}
 
-
-
-
-
-
-
-
+	.header.opened {
+    height: 100% !important;
+    z-index: 99;
+    background-color: #ffffff;
+}
 
 
 
@@ -493,6 +494,12 @@ button.learn-more:active {
 				padding: .6em 2.3em;
 			}
 		}
+		.what-included .row.content > div{
+			max-width: 90%;
+			/* max-height: 90%; */
+			transform: scale(1,1) !important;
+			margin-bottom: 7%;
+		}
 		.logo{
 			background-size: contain !important;
 		}
@@ -502,25 +509,79 @@ button.learn-more:active {
 		.header.full-show {
 			height: 15vh;
 		}
-		.menu{
+		.header:not(.opened) .menu{
 			display:none;
 		}
 		.show-menu{
 			display: block !important;
 			/* margin-left: auto; */
 		}
+		.what-gets .row > div {
+			padding: 1% 7%;
+		}
 
 	}
 	section.course-info,section.who-conduct {
 		box-shadow: none;
 	}
-	
+	.company-info .description {
+	    font-family: RobotoRegular;
+	    /* text-align: left; */
+	    /* max-width: 50%; */
+	    /* line-height: 2em; */
+	    /* padding: 8% 0; */
+	    /* word-wrap: initial; */
+	    white-space: pre-line;
+	}
+.video-container video.fillWidth {
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+	.video-container {
+    position: relative;
+    bottom: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    position: absolute;
+    z-index: -1;
+}
+.video-container .filter {
+    z-index: 100;
+    z-index: 1;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+}
 
 
-
-
-
-
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:-1;
+	}
 
 
 
@@ -560,8 +621,12 @@ button.learn-more:active {
 			padding: 0 4% 6%;
 		}
 		h2.title {
-			font-size: 4vmax;
+			font-size: 6vmax;
+			word-wrap: break-word;
 			padding-top: 20%;
+			padding-left: 5%;
+			word-break: break-word;
+			padding-right: 5%;
 		}
 		.for-whom {
 			height: 100% !important;
@@ -624,6 +689,24 @@ button.learn-more:active {
 							/*}*/
 
 							.what-included .row.content > div {
-								max-width: 25%;
+								/* max-width: 25%; */
 							}
 						}
+
+.opened .menu {
+    position: absolute;
+    bottom: 0;
+    /* left: 0; */
+    display: flex;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+}
+
+.opened .menu-item {
+    display: block !important;
+    width: 100%;
+    font-size: 2.8vmax;
+    text-align: right;
+}
