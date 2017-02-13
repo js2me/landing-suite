@@ -62,4 +62,12 @@ $(document).ready(function() {
 					}
 				},
 			});
+
+    $('[data-slick]').slick({
+        slidesToShow: 4,
+        arrows:false,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500
+	});
 });
