@@ -1592,3 +1592,6 @@ audio, canvas, progress, video {
 .what-included .fp-scroller {
 	padding: 3vh 0;
 }
+.container.full-height > .row.content {
+	padding-bottom: 9vh;
+}
