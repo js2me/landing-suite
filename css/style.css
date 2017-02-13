@@ -859,6 +859,11 @@ button.show-menu {
 	outline: none;
 	box-shadow: none;
 }
+@media only screen and (max-width: 480px){
+	button.show-menu{
+		width: 3.8em !important;
+	}
+}
 button.show-menu > svg{
 	height: 100%;
 	width: 100%;
