@@ -1249,6 +1249,7 @@ img.card-photo {
 
 	.menu > .menu-item {
 		font-size:1.1vmax;
+		min-height: 11vh;
 		padding: .45em 1em;
 	}
 }
@@ -1438,7 +1439,8 @@ audio, canvas, progress, video {
 		font-size: 97%;
 	}
 	.opened .menu-item {
-		min-height: 11vh;
+		min-height: 8vh;
+		padding: .25em 1em;
 	}
 	.opened .menu-item > a{
 		line-height: 8vh;
@@ -1536,13 +1538,14 @@ audio, canvas, progress, video {
 
 .opened .menu {
 	position: absolute;
-	bottom: 0;
+	/* bottom: 0; */
 	/* left: 0; */
 	display: block;
 	right: 0;
+	top: 18%;
 	flex-direction: column;
 	width: 100%;
-	height: 80%;
+	height: 65vh;
 }
 
 .opened .menu-item {
