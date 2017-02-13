@@ -1459,7 +1459,7 @@ audio, canvas, progress, video {
 	h2.title {
 		font-size: 4.3vmax;
 		word-wrap: break-word;
-		padding-top: 25%;
+		padding-top: 5%;
 		padding-left: 5%;
 		word-break: break-word;
 		padding-right: 5%;
@@ -1580,4 +1580,7 @@ audio, canvas, progress, video {
 	margin: 6vh auto;
 	min-height: 20vh;
 	height: 100%;
+}
+.what-included .fp-scroller {
+	padding: 3vh 0;
 }
