@@ -822,6 +822,9 @@ body{
 	transform: scale(0.8,0.8);
 	opacity: 0;
 }
+.scroll-part:not(.main){
+	padding: 7vh 0;
+}
 .scroll-part{
 	/* transition: transform 1s ease-out; */
 	/* min-height: 100%; */
@@ -1034,7 +1037,7 @@ h2.title{
 	text-align:center;
 	margin: 0;
 	font-size: 2.3vmax;
-	padding: 12% 0 2.8579% 0;
+	padding: 0% 0 2.8579% 0;
 	color: #3a2e7f;
 }
 
